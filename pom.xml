@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ldapclient</groupId>
+    <artifactId>ldapclient</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <springLdapVersion>1.3.2.RELEASE</springLdapVersion>
+        <springSecurityVersion>3.1.4.RELEASE</springSecurityVersion>
+
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>local-nexus</id>
+            <name>local-nexus</name>
+            <url>http://nexus.gsdev.info:8088/nexus</url>
+        </repository>
+        <repository>
+            <id>JBoss-Thirdparty</id>
+            <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
+        </repository>
+        <repository>
+            <id>com.springsource.repository.bundles.external</id>
+            <url>http://repository.springsource.com/maven/bundles/external</url>
+        </repository>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>org.openspaces</id>
+            <name>OpenSpaces</name>
+            <url>http://maven-repository.openspaces.org</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <dependencies>
+    <dependency>
+        <groupId>com.gigaspaces</groupId>
+        <artifactId>gs-openspaces</artifactId>
+        <version>10.0.0-SNAPSHOT</version>
+    </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+            <version>${springSecurityVersion}</version>
+        </dependency>
+        <!-- LDAP dependencies -->
+        <dependency>
+            <groupId>org.springframework.ldap</groupId>
+            <artifactId>spring-ldap-core</artifactId>
+            <version>${springLdapVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ldap</groupId>
+            <artifactId>spring-ldap-core-tiger</artifactId>
+            <version>${springLdapVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ldap</groupId>
+            <artifactId>spring-ldap-odm</artifactId>
+            <version>${springLdapVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ldap</groupId>
+            <artifactId>spring-ldap-ldif-core</artifactId>
+            <version>${springLdapVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ldap</groupId>
+            <artifactId>spring-ldap-ldif-batch</artifactId>
+            <version>${springLdapVersion}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
