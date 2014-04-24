@@ -19,6 +19,10 @@ public class Client {
      * Initialize the security manager using the spring security configuration.
      */
     public void init() throws com.gigaspaces.security.SecurityException {
+
+        System.setProperty("javax.net.ssl.trustStore","/home/kobi/dev/ldapclient/src/main/resources/jssecacerts");
+        System.setProperty("javax.net.ssl.keyStore","/home/kobi/dev/ldapclient/src/main/resources/keystore.ks");
+        System.setProperty("javax.net.ssl.keyStorePassword","password");
 		/*
 		 * Extract Spring AuthenticationManager definition
 		 */
